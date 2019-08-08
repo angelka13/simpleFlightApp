@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Add flight</title>
+    <link rel="stylesheet" href="/css/style.css" />
+
+</head>
+<body>
+<div id="container" >
+    <form  th:action="@{/addFlight}" method="post">
+        <h1>Add a new flight</h1>
+
+        <input type="text" name="placeFrom" id="placeFrom"  placeholder=" Place from" required="" />
+
+        <input type="text" name="placeTo" id="placeTo"  placeholder=" Place to" required="" />
+
+        Date start
+        <input type="text" name="startDate"  />
+        Date end
+        <input type="text" name="endDate" />
+        Max place
+        <input type="number" name="maxPlace" placeholder="Max place " min="50" max="100" />
+        Ticket price
+        <input type="number" name="ticketPrice" placeholder="Ticket Price " min="50" max="1000" />
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Add</button>
+    </form>
+    <form  th:action="@{/admin}" method="get">
+        <button type="Submit">Cancel</button>
+    </form>
+</div>
+</body>
+</html>

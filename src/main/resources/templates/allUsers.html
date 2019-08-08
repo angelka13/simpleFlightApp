@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{default}">
+<head>
+    <title>All users</title>
+    <script src="/js/custom.js"></script>
+    <script src="/js/main.js"></script>
+
+    <script type="text/javascript" src="webjars/jquery/2.2.3/jquery.js"></script>
+
+    <script type="text/javascript" src="webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="webjars/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+
+</head>
+<body>
+<div class="container" >
+    <h1>All users</h1>
+
+
+    <div class="card-block">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name:</th>
+                    <th>email:</th>
+                    <th>role:</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr th:each="user : ${users}">
+                <td th:text="${user.getFullname()}"></td>
+                <td th:text="${user.getEmail()}"></td>
+                <td th:text="${user.getRolesAsString()}"></td>
+                <td> <a class="btn btn-primary eBtn"> Edit</a></td>
+            </tbody>
+
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
